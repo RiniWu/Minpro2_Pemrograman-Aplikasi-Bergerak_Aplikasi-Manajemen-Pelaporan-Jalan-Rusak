@@ -1,16 +1,18 @@
-# sistem_pelaporan_jalanan_rusak
+# Minpro2_Pemrograman Aplikasi Bergerak
 
-A new Flutter project.
+## Nama: Rini Wulandari
 
-## Getting Started
+## NIM: 2409116048
 
-This project is a starting point for a Flutter application.
+## Kelas: Sistem Informasi B 2024
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Aplikasi Manajemen Pelaporan Jalan Rusak
+## Deskripsi Aplikasi
+Aplikasi Pelaporan Jalan Rusak merupakan aplikasi mobile berbasis Flutter yang dirancang untuk mencatat dan mengelola laporan kerusakan jalan secara sederhana.
+Aplikasi ini memungkinkan pengguna untuk:
+- Menambahkan laporan kerusakan jalan
+- Melihat daftar laporan
+- Melihat detail laporan
+- Mengubah status laporan
+- Mengedit dan menghapus laporan
