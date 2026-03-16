@@ -49,7 +49,7 @@ Aplikasi ini memungkinkan pengguna untuk:
 - Pada halaman Homepage, saya menampilkan tampilan utama aplikasi setelah pengguna berhasil login. Di bagian atas terdapat judul Pelaporan Jalan Rusak yang disertai dengan email pengguna yang sedang digunakan, sehingga pengguna dapat mengetahui akun yang aktif.
 - Di bawahnya terdapat deskripsi singkat mengenai tujuan aplikasi serta tombol **Buat Laporan** yang dapat digunakan untuk menambahkan laporan kerusakan jalan baru.
 - Selanjutnya, saya menambahkan bagian statistik laporan yang menampilkan jumlah laporan berdasarkan statusnya, yaitu Total, Diproses, dan Selesai, sehingga pengguna dapat melihat perkembangan laporan secara cepat.
-- Pada bagian bawah terdapat Daftar Laporan yang menampilkan laporan yang sudah dibuat dalam bentuk card berisi lokasi jalan, nama pelapor, jenis kerusakan, dan tanggal laporan, serta ikon hapus yang memungkinkan pengguna menghapus laporan jika diperlukan.
+- Pada bagian bawah terdapat Daftar Laporan (Read) yang menampilkan laporan yang sudah dibuat dalam bentuk card berisi lokasi jalan, nama pelapor, jenis kerusakan, dan tanggal laporan, serta ikon hapus yang memungkinkan pengguna menghapus laporan jika diperlukan.
 <p align="center">
   <img src="images/homepage.png" width="350"/>
 </p>
@@ -112,4 +112,9 @@ Sebagai contoh, saya melakukan perubahan tanggal laporan atas nama Wulan yang se
 - Untuk menghapus laporan bisa langsung klik ikon tempat sampah berwarna merah pada sebelah kanan laporan, setelah diklik akan muncul konfirmasi untuk memastikan bahwa pengguna benar-benar ingin menghapus data yang dipilih.
 - Terdapat dua pilihan tombol, yaitu Batal untuk membatalkan proses dan kembali ke halaman sebelumnya, serta Hapus untuk melanjutkan penghapusan. Jika pengguna memilih Hapus, data akan dihapus dari daftar laporan dan tampilan akan diperbarui secara otomatis.
 - Setelah laporan dihapus di bagian bawah layar muncul notifikasi berupa SnackBar dengan pesan “Laporan berhasil dihapus” sebagai bentuk umpan balik kepada pengguna bahwa proses penghapusan telah berhasil dilakukan.
+<p align="center">
+  <img src="images/hapus.png" width="300"/>
+  <img src="images/hapus1.png" width="300"/>
+</p>
 
+## Dark Mode
