@@ -128,3 +128,42 @@ Sebagai contoh, saya melakukan perubahan tanggal laporan atas nama Wulan yang se
   <img src="images/darkmode6.png" width="200"/>
   <img src="images/darkmode7.png" width="200"/>
 </p>
+
+## Widget Yang Digunakan
+- **MaterialApp** – Mengatur konfigurasi utama aplikasi seperti tema dan halaman awal.
+- **Scaffold** – Kerangka dasar halaman aplikasi.
+- **AppBar** – Header atau bagian atas halaman.
+- **Container** – Wadah untuk mengatur ukuran, warna, dan dekorasi.
+- **Column** – Menyusun widget secara vertikal.
+- **Row** – Menyusun widget secara horizontal.
+- **Padding** – Memberikan jarak di dalam widget.
+- **SizedBox** – Memberikan ruang kosong antar widget.
+- **Center** – Menempatkan widget di tengah.
+- **Align** – Mengatur posisi widget dalam layout.
+- **Expanded** – Membuat widget mengisi ruang yang tersedia.
+- **SingleChildScrollView** – Membuat halaman dapat di-scroll.
+- **ListView** – Menampilkan data dalam bentuk daftar.
+- **ClipRRect** – Membuat sudut widget menjadi membulat.
+- **Card** – Menampilkan data dalam bentuk kartu.
+- **ListTile** – Menampilkan item daftar dengan struktur tertentu.
+- **CircleAvatar** – Menampilkan ikon dalam bentuk lingkaran.
+- **Text** – Menampilkan teks.
+- **RichText** – Menampilkan teks dengan beberapa gaya.
+- **WidgetSpan** – Menyisipkan widget di dalam teks.
+- **Icon** – Menampilkan ikon.
+- **TextFormField** – Input teks dengan validasi.
+- **DropdownButtonFormField**– Input pilihan dari beberapa opsi.
+- **Form** – Mengelola input dan validasi form.
+- **ElevatedButton**– Tombol untuk menjalankan aksi utama.
+- **ElevatedButton.icon** – Tombol dengan ikon dan teks.
+- **TextButton** – Tombol sederhana berbasis teks.
+- **IconButton** – Tombol berbentuk ikon.
+- **GestureDetector** – Mendeteksi interaksi seperti tap.
+- **FutureBuilder** – Menampilkan data dari proses asynchronous.
+- **AnimatedContainer** – Memberikan animasi pada perubahan widget.
+- **CircularProgressIndicator** – Menampilkan indikator loading.
+- **SnackBar** – Menampilkan pesan singkat kepada pengguna.
+- **AlertDialog** – Menampilkan dialog konfirmasi.
+- **Navigator** – Mengatur perpindahan antar halaman.
+- **MaterialPageRoute** – Menentukan rute halaman saat navigasi.
+- **Consumer (Provider)** – Mengakses dan mengelola state aplikasi.
