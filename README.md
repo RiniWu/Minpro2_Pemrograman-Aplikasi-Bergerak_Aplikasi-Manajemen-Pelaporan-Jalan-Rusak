@@ -11,11 +11,13 @@
 ## Deskripsi Aplikasi
 Aplikasi Pelaporan Jalan Rusak merupakan aplikasi mobile berbasis Flutter yang dirancang untuk mencatat dan mengelola laporan kerusakan jalan secara sederhana.
 Aplikasi ini memungkinkan pengguna untuk:
-1.  Menambahkan laporan kerusakan jalan
-2.  Melihat daftar laporan
-3.  Melihat detail laporan
-4.  Mengubah status laporan
-5.  Mengedit dan menghapus laporan
+1. Melakukan Login dan Register
+2. Menambahkan laporan kerusakan jalan
+3. Melihat daftar laporan
+4. Melihat detail laporan
+5. Mengubah status laporan
+6. Mengedit dan menghapus laporan
+7. Mengubah Mode Tampilan (Light/Dark)
 
 ## Penjelasan Fitur Aplikasi
 
