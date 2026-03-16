@@ -20,3 +20,7 @@ Aplikasi ini memungkinkan pengguna untuk:
 ## Penjelasan Fitur Aplikasi
 
 ### 1. Login
+<p align="center">
+  <img src="images/login_page.png" width="400"/>
+  <img src="images/login_done.png" width="400"/>
+</p>
