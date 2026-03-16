@@ -65,7 +65,12 @@ Aplikasi ini memungkinkan pengguna untuk:
 - Setelah berhasil disimpan, data laporan akan langsung muncul pada daftar laporan dan jumlah total laporan juga akan bertambah pada bagian statistik.
 <p align="center">
   <img src="images/formpage.png" width="350"/>
-  <img src="images/formpage1.png" width="350"/>
   <img src="images/formpage2.png" width="350"/>
+  <img src="images/formpage1.png" width="350"/>
   <img src="images/formpage3.png" width="350"/>
+</p>
+
+- **Validasi setiap TextField tidak boleh kosong dan harus diisi**
+<p align="center">
+  <img src="images/formpage4.png" width="350"/>
 </p>
