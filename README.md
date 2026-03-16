@@ -118,3 +118,13 @@ Sebagai contoh, saya melakukan perubahan tanggal laporan atas nama Wulan yang se
 </p>
 
 ## Dark Mode
+<p align="center">
+  <img src="images/darkmode.png" width="200"/>
+  <img src="images/darkmode1.png" width="200"/>
+  <img src="images/darkmode2.png" width="200"/>
+  <img src="images/darkmode3.png" width="200"/>
+  <img src="images/darkmode4.png" width="200"/>
+  <img src="images/darkmode5.png" width="200"/>
+  <img src="images/darkmode6.png" width="200"/>
+  <img src="images/darkmode7.png" width="200"/>
+</p>
