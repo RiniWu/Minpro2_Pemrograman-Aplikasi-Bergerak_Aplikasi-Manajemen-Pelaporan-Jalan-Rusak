@@ -29,6 +29,7 @@ Aplikasi ini memungkinkan pengguna untuk:
   <img src="images/login_done.png" width="300"/>
 </p>
 
+#
 ### 2. Register
 - Fitur Register digunakan agar pengguna dapat membuat akun baru sebelum menggunakan aplikasi pelaporan jalan rusak.
 - Pada halaman ini, pengguna diminta mengisi email, password, dan konfirmasi password untuk memastikan bahwa kata sandi yang dimasukkan sudah benar. Setelah semua data diisi, pengguna dapat menekan tombol Register untuk mendaftarkan akun.
@@ -43,6 +44,7 @@ Aplikasi ini memungkinkan pengguna untuk:
   <img src="images/user_supabase.png" width="1000"/>
 </p>
 
+#
 ### 3. HomePage
 - Pada halaman Homepage, saya menampilkan tampilan utama aplikasi setelah pengguna berhasil login. Di bagian atas terdapat judul Pelaporan Jalan Rusak yang disertai dengan email pengguna yang sedang digunakan, sehingga pengguna dapat mengetahui akun yang aktif.
 - Di bawahnya terdapat deskripsi singkat mengenai tujuan aplikasi serta tombol **Buat Laporan** yang dapat digunakan untuk menambahkan laporan kerusakan jalan baru.
@@ -52,11 +54,12 @@ Aplikasi ini memungkinkan pengguna untuk:
   <img src="images/homepage.png" width="350"/>
 </p>
 
-- **Seluruh laporan yang dibuat otomatis akan masuk dalam supabase.**
+**Seluruh laporan yang dibuat otomatis akan masuk dalam supabase.**
 <p align="center">
   <img src="images/pelapor_supabase.png" width="1000"/>
 </p>
 
+#
 ### 3. FormPage
 - Pada halaman ini saya menyediakan form yang digunakan pengguna untuk memasukkan data terkait kerusakan jalan yang ingin dilaporkan.
 - Pengguna diminta mengisi beberapa informasi seperti nama pelapor, lokasi jalan, jenis kerusakan, deskripsi kerusakan, dan tanggal kejadian.
@@ -64,13 +67,49 @@ Aplikasi ini memungkinkan pengguna untuk:
 - Setelah semua data diisi, pengguna dapat menekan tombol Simpan untuk menambahkan laporan tersebut ke dalam daftar laporan pada halaman dashboard.
 - Setelah berhasil disimpan, data laporan akan langsung muncul pada daftar laporan dan jumlah total laporan juga akan bertambah pada bagian statistik.
 <p align="center">
-  <img src="images/formpage.png" width="350"/>
-  <img src="images/formpage2.png" width="350"/>
-  <img src="images/formpage1.png" width="350"/>
-  <img src="images/formpage3.png" width="350"/>
+  <img src="images/formpage.png" width="200"/>
+  <img src="images/formpage2.png" width="200"/>
+  <img src="images/formpage1.png" width="200"/>
+  <img src="images/formpage3.png" width="200"/>
 </p>
 
-- **Validasi setiap TextField tidak boleh kosong dan harus diisi**
+**Validasi setiap TextField tidak boleh kosong dan harus diisi**
 <p align="center">
   <img src="images/formpage4.png" width="350"/>
 </p>
+
+#
+### 4. DetailPage
+- Pada halaman Detail Laporan, saya menampilkan informasi lengkap dari laporan yang telah dibuat oleh pengguna.
+- Pada bagian atas ditampilkan nama lokasi jalan, kemudian diikuti dengan informasi nama pelapor, jenis kerusakan, dan tanggal laporan agar pengguna dapat melihat detail laporan dengan jelas.
+- Di bawahnya terdapat status laporan yang menunjukkan kondisi laporan saat ini, misalnya Baru, Diproses, atau Selesai. Pengguna juga dapat mengubah status laporan melalui tombol yang tersedia pada bagian Ubah Status.
+- Ketika salah satu status dipilih, sistem akan menampilkan dialog konfirmasi terlebih dahulu untuk memastikan perubahan yang dilakukan memang diinginkan oleh pengguna.
+- Selain itu, terdapat tombol Edit Laporan yang dapat digunakan untuk memperbarui data laporan jika terdapat informasi yang perlu diperbaiki.
+- Setelah status berhasil diubah, perubahan tersebut akan langsung terlihat pada halaman dashboard dan jumlah laporan pada bagian statistik juga akan ikut diperbarui.
+<p align="center">
+  <img src="images/detail.png" width="300"/>
+  <img src="images/detail1.png" width="300"/>
+  <img src="images/detail2.png" width="300"/>
+</p>
+
+#
+### 5. Mengedit Laporan
+- Saya juga menyediakan form yang digunakan untuk memperbarui data laporan yang sudah dibuat sebelumnya. Data laporan yang telah ada seperti nama pelapor, lokasi, jenis kerusakan, deskripsi, dan tanggal akan otomatis terisi di dalam form sehingga pengguna hanya perlu mengubah bagian yang ingin diperbaiki.
+- Pengguna juga tetap dapat mengganti jenis kerusakan melalui dropdown serta memilih tanggal menggunakan fitur pemilihan tanggal. Setelah perubahan selesai dilakukan, pengguna dapat menekan tombol Simpan untuk menyimpan pembaruan data.
+<p align="center">
+  <img src="images/edit.png" width="350"/>
+</p>
+
+**Setelah disimpan, informasi laporan yang telah diperbarui akan langsung terlihat pada halaman dashboard maupun detail laporan.**
+
+Sebagai contoh, saya melakukan perubahan tanggal laporan atas nama Wulan yang sebelumnya pada tanggal 2 Februari 2026 diubah menjadi tanggal 3 Maret 2026.
+<p align="center">
+  <img src="images/detail2.png" width="300"/>
+  <img src="images/edit1.png" width="300"/>
+</p>
+
+### 6. Menghapus Laporan
+- Untuk menghapus laporan bisa langsung klik ikon tempat sampah berwarna merah pada sebelah kanan laporan, setelah diklik akan muncul konfirmasi untuk memastikan bahwa pengguna benar-benar ingin menghapus data yang dipilih.
+- Terdapat dua pilihan tombol, yaitu Batal untuk membatalkan proses dan kembali ke halaman sebelumnya, serta Hapus untuk melanjutkan penghapusan. Jika pengguna memilih Hapus, data akan dihapus dari daftar laporan dan tampilan akan diperbarui secara otomatis.
+- Setelah laporan dihapus di bagian bawah layar muncul notifikasi berupa SnackBar dengan pesan “Laporan berhasil dihapus” sebagai bentuk umpan balik kepada pengguna bahwa proses penghapusan telah berhasil dilakukan.
+
