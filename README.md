@@ -16,3 +16,7 @@ Aplikasi ini memungkinkan pengguna untuk:
 - Melihat detail laporan
 - Mengubah status laporan
 - Mengedit dan menghapus laporan
+
+## Penjelasan Fitur Aplikasi
+
+### 1. Login
