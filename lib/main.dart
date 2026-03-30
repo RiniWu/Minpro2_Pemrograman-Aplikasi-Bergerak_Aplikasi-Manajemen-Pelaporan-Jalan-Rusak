@@ -1,64 +1,71 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
+import 'pages/login_page.dart';
+import 'providers/theme_provider.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await dotenv.load(fileName: ".env");
+
+  await Supabase.initialize(
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_PUBLISHABLE_KEY']!,
+  );
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
+
+final supabase = Supabase.instance.client;
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pelaporan Jalanan Rusak',
+      title: 'Pelaporan Jalan Rusak',
+
+      locale: const Locale('id', 'ID'),
+
+      supportedLocales: const [Locale('id', 'ID'), Locale('en', 'US')],
+
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+
+      themeMode: themeProvider.mode,
+
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: const Color(0xFFF4F8FF),
-
-        colorScheme: const ColorScheme.light(
-          primary: Color(0xFF4F8EF7),
-          secondary: Color.fromARGB(255, 197, 218, 255),
-        ),
-
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          centerTitle: true,
-          titleTextStyle: TextStyle(
-            color: Colors.black87,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-          iconTheme: IconThemeData(color: Colors.black87),
-        ),
-
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF4F8EF7),
-            foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
-            ),
-          ),
-        ),
-
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 16,
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide: BorderSide.none,
-          ),
-        ),
+        colorSchemeSeed: const Color(0xFF4F8EF7),
+        brightness: Brightness.light,
       ),
-      home: const HomePage(),
+
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: const Color(0xFF4F8EF7),
+        brightness: Brightness.dark,
+      ),
+
+      home: supabase.auth.currentUser == null
+          ? const LoginPage()
+          : const HomePage(),
     );
   }
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/laporan.dart';
 
 class LaporanCard extends StatelessWidget {
-  final Laporan laporan;
+  final Map<String, dynamic> laporan;
   final VoidCallback onDelete;
   final VoidCallback onTap;
 
@@ -16,11 +15,14 @@ class LaporanCard extends StatelessWidget {
   Color getStatusColor(String status) {
     switch (status) {
       case "Baru":
-        return const Color(0xFFE57373);
+        return Colors.red;
+
       case "Diproses":
-        return const Color(0xFFFFB74D);
+        return Colors.orange;
+
       case "Selesai":
-        return const Color(0xFF81C784);
+        return Colors.green;
+
       default:
         return Colors.grey;
     }
@@ -28,89 +30,40 @@ class LaporanCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 14),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(18),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 5),
-          ),
-        ],
-      ),
-      child: InkWell(
+    final status = laporan['status'] ?? "Baru";
+
+    return Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
+      child: ListTile(
         onTap: onTap,
-        child: Row(
+
+        leading: CircleAvatar(
+          radius: 22,
+          backgroundColor: getStatusColor(status).withOpacity(.15),
+          child: Icon(
+            Icons.warning_rounded,
+            color: getStatusColor(status),
+            size: 24,
+          ),
+        ),
+
+        title: Text(
+          laporan['lokasi'],
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundColor: getStatusColor(laporan.status).withOpacity(0.2),
-              child: Icon(Icons.warning, color: getStatusColor(laporan.status)),
-            ),
-            const SizedBox(width: 12),
-
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    laporan.lokasi,
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  Text("Pelapor: ${laporan.namaPelapor}"),
-                  Text("${laporan.jenisKerusakan} • ${laporan.tanggal}"),
-                ],
-              ),
-            ),
-
-            IconButton(
-              icon: const Icon(Icons.delete, color: Colors.redAccent),
-              onPressed: () async {
-                final confirm = await showDialog(
-                  context: context,
-                  builder: (context) {
-                    return AlertDialog(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      title: const Text("Hapus Laporan"),
-                      content: const Text(
-                        "Apakah Anda yakin ingin menghapus laporan ini?",
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context, false);
-                          },
-                          child: const Text("Batal"),
-                        ),
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.redAccent,
-                          ),
-                          onPressed: () {
-                            Navigator.pop(context, true);
-                          },
-                          child: const Text("Hapus"),
-                        ),
-                      ],
-                    );
-                  },
-                );
-
-                if (confirm == true) {
-                  onDelete();
-
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Laporan berhasil dihapus")),
-                  );
-                }
-              },
-            ),
+            Text("Pelapor : ${laporan['nama_pelapor']}"),
+            Text("${laporan['jenis_kerusakan']} • ${laporan['tanggal']}"),
           ],
+        ),
+
+        trailing: IconButton(
+          icon: const Icon(Icons.delete, color: Colors.red),
+          onPressed: onDelete,
         ),
       ),
     );
